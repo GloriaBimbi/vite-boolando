@@ -1,108 +1,112 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      cards: [
+        {
+          src: "1.webp",
+          srcHover: "1b.webp",
+          brand: "Levi's",
+          productDescription: "RELAXED FIT TEE UNISEX",
+          discountPrize: "14,99€",
+          originalPrize: "29,99€",
+          discountStatus: true,
+          discountPercentage: "-50%",
+          sostenibility: true,
+        },
+        {
+          src: "2.webp",
+          scrHover: "2b.webp",
+          brand: "Guess",
+          productDescription: "ORSES TEE",
+          discountPrize: "20,99€",
+          originalPrize: "29,99€",
+          discountStatus: true,
+          discountPercentage: "-30%",
+          sostenibility: false,
+        },
+        {
+          src: "3.webp",
+          scrHover: "3b.webp",
+          brand: "Come Zucchero Filato",
+          productDescription: "VOLGIA DI COLORI PASTELLO",
+          discountPrize: "129,99€",
+          originalPrize: "184,99€",
+          discountStatus: true,
+          discountPercentage: "-30%",
+          sostenibility: false,
+        },
+        {
+          src: "4.webp",
+          scrHover: "4b.webp",
+          brand: "Levi's",
+          productDescription: "TEE UNISEX",
+          discountPrize: "14,99€",
+          originalPrize: "29,99€",
+          discountStatus: true,
+          discountPercentage: "-50%",
+          sostenibility: true,
+        },
+        {
+          src: "5.webp",
+          scrHover: "5b.webp",
+          brand: "Maya Deluxe",
+          productDescription: "STRIPE BODICE",
+          discountPrize: "99,99€",
+          originalPrize: "",
+          discountStatus: false,
+          discountPercentage: "-30%",
+          sostenibility: false,
+        },
+        {
+          src: "6.webp",
+          scrHover: "6b.webp",
+          brand: "Esprit",
+          productDescription: "MAGLIONE - BLACK",
+          discountPrize: "29,99€",
+          originalPrize: "",
+          discountStatus: false,
+          discountPercentage: "",
+          sostenibility: true,
+        },
+      ],
+    };
+  },
+
+  methods: {
+    buildImagePath(imageName) {
+      return new URL("../assets/img/" + imageName, import.meta.url).href;
+    },
+  },
+};
+</script>
+
 <template>
   <main>
     <div id="product" class="container">
-      <!--card1-->
-      <div class="card">
-        <img src="../assets/img/1.webp" alt="" class="product-picture" />
+      <div v-for="card in cards" class="card">
+        <img :src="buildImagePath(card.src)" alt="" class="product-picture" />
         <div class="overlay">
-          <img src="../assets/img/1b.webp" alt="" class="product-picture" />
+          <img
+            :src="buildImagePath(card.srcHover)"
+            alt=""
+            class="product-picture"
+          />
         </div>
         <span
-          >Levi's <br />
-          <strong>RELAXED FIT TEE UNISEX</strong> <br /><span
+          >{{ card.brand }} <br />
+          <strong>{{ card.productDescription }}</strong> <br /><span
             class="discount-prize"
-            >14,99€</span
+            >{{ card.discountPrize }}</span
           >
-          <span class="original-prize">29,99€</span>
+          <span class="original-prize">{{ card.originalPrize }}</span>
         </span>
-        <span class="discount-percentage">-50%</span>
-        <span class="sostenibility">Sostenibilità</span>
-        <span class="heart">&hearts;</span>
-      </div>
-      <!--card2-->
-      <div class="card">
-        <img src="../assets/img/2.webp" alt="" class="product-picture" />
-        <div class="overlay">
-          <img src="../assets/img/2b.webp" alt="" class="product-picture" />
-        </div>
-        <span
-          >Levi's <br />
-          <strong>RELAXED FIT TEE UNISEX</strong> <br /><span
-            class="discount-prize"
-            >14,99€</span
-          >
-          <span class="original-prize">29,99€</span>
-        </span>
-        <span class="discount-percentage">-30%</span>
-        <span class="heart">&hearts;</span>
-      </div>
-      <!--card3-->
-      <div class="card">
-        <img src="../assets/img/3.webp" alt="" class="product-picture" />
-        <div class="overlay">
-          <img src="../assets/img/3b.webp" alt="" class="product-picture" />
-        </div>
-        <span
-          >Levi's <br />
-          <strong>RELAXED FIT TEE UNISEX</strong> <br /><span
-            class="discount-prize"
-            >14,99€</span
-          >
-          <span class="original-prize">29,99€</span>
-        </span>
-        <span class="discount-percentage">-30%</span>
-        <span class="heart">&hearts;</span>
-      </div>
-      <!--card4-->
-      <div class="card">
-        <img src="../assets/img/4.webp" alt="" class="product-picture" />
-        <div class="overlay">
-          <img src="../assets/img/4b.webp" alt="" class="product-picture" />
-        </div>
-        <span
-          >Levi's <br />
-          <strong>RELAXED FIT TEE UNISEX</strong> <br /><span
-            class="discount-prize"
-            >14,99€</span
-          >
-          <span class="original-prize">29,99€</span>
-        </span>
-        <span class="heart">&hearts;</span>
-      </div>
-      <!--card5-->
-      <div class="card">
-        <img src="../assets/img/5.webp" alt="" class="product-picture" />
-        <div class="overlay">
-          <img src="../assets/img/5b.webp" alt="" class="product-picture" />
-        </div>
-        <span
-          >Levi's <br />
-          <strong>RELAXED FIT TEE UNISEX</strong> <br /><span
-            class="discount-prize"
-            >14,99€</span
-          >
-          <span class="original-prize">29,99€</span>
-        </span>
-        <span class="sostenibility-solo">Sostenibilità</span>
-        <span class="heart">&hearts;</span>
-      </div>
-      <!--card6-->
-      <div class="card">
-        <img src="../assets/img/6.webp" alt="" class="product-picture" />
-        <div class="overlay">
-          <img src="../assets/img/6b.webp" alt="" class="product-picture" />
-        </div>
-        <span
-          >Levi's <br />
-          <strong>RELAXED FIT TEE UNISEX</strong> <br /><span
-            class="discount-prize"
-            >14,99€</span
-          >
-          <span class="original-prize">29,99€</span>
-        </span>
-        <span class="discount-percentage">-50%</span>
-        <span class="sostenibility">Sostenibilità</span>
+        <span v-show="card.discountStatus" class="discount-percentage">{{
+          card.discountPercentage
+        }}</span>
+        <span v-show="card.sostenibility" class="sostenibility"
+          >Sostenibilità</span
+        >
         <span class="heart">&hearts;</span>
       </div>
     </div>
@@ -111,12 +115,14 @@
 
 <style lang="scss" scoped>
 #product {
+  padding: 25px 0;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
   .card {
-    margin: 75px 25px;
+    margin: 50px 25px;
     width: calc(100% / 3 - 55px);
     min-width: 100px;
     position: relative;
