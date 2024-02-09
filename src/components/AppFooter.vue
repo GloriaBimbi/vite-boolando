@@ -19,9 +19,11 @@ export default {
           <a :href="link.url" class="header__link">{{ link.text }}</a>
         </div>
       </div>
-      <div v-for="social in socials" class="social-media-contacts">
+      <div class="social-media-contacts">
         Trovaci anche su <br />
-        <a :href="link.url"> <i :class="link.icon"></i> </a>
+        <a v-for="social in socials" :href="social.url">
+          <i :class="social.icon"></i>
+        </a>
       </div>
     </div>
   </footer>
