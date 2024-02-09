@@ -49,7 +49,7 @@ export default {
         },
         {
           src: "2.webp",
-          scrHover: "2b.webp",
+          srcHover: "2b.webp",
           brand: "Guess",
           productDescription: "ORSES TEE",
           discountPrize: "20,99€",
@@ -61,7 +61,7 @@ export default {
         },
         {
           src: "3.webp",
-          scrHover: "3b.webp",
+          srcHover: "3b.webp",
           brand: "Come Zucchero Filato",
           productDescription: "VOLGIA DI COLORI PASTELLO",
           discountPrize: "129,99€",
@@ -73,7 +73,7 @@ export default {
         },
         {
           src: "4.webp",
-          scrHover: "4b.webp",
+          srcHover: "4b.webp",
           brand: "Levi's",
           productDescription: "TEE UNISEX",
           discountPrize: "14,99€",
@@ -85,7 +85,7 @@ export default {
         },
         {
           src: "5.webp",
-          scrHover: "5b.webp",
+          srcHover: "5b.webp",
           brand: "Maya Deluxe",
           productDescription: "STRIPE BODICE",
           discountPrize: "99,99€",
@@ -97,7 +97,7 @@ export default {
         },
         {
           src: "6.webp",
-          scrHover: "6b.webp",
+          srcHover: "6b.webp",
           brand: "Esprit",
           productDescription: "MAGLIONE - BLACK",
           discountPrize: "29,99€",
