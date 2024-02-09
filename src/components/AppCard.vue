@@ -38,7 +38,9 @@ export default {
     <span v-show="card.discountStatus" class="discount-percentage">{{
       card.discountPercentage
     }}</span>
-    <span v-show="card.sostenibility" class="sostenibility">Sostenibilità</span>
+    <span v-show="card.sostenibility" class="sostenibility sostenibility-solo"
+      >Sostenibilità</span
+    >
     <span
       @click="changeStatus(card.isInFavorites)"
       :style="card.isInFavorites == true ? 'color:red;' : ''"
@@ -94,21 +96,12 @@ export default {
     bottom: 100px;
     left: 60px;
   }
-
-  .sostenibility-solo {
-    color: white;
-    background-color: green;
-    padding: 5px 10px;
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-  }
   .heart {
     color: rgba(0, 0, 0, 0.435);
     background-color: white;
     padding: 10px;
-    position: relative;
-    left: 154px;
+    position: absolute;
+    left: 249px;
     bottom: 415px;
 
     &:hover {
