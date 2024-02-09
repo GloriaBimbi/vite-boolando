@@ -1,18 +1,33 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        {
+          url: "#",
+          text: "Donna",
+        },
+        {
+          url: "#",
+          text: "Uomo",
+        },
+        {
+          url: "#",
+          text: "Bambini",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <template>
   <header>
     <div class="container header__wrapper">
       <nav class="nav">
         <ul>
-          <li>
-            <a href="#" class="header__link">Donna</a>
-          </li>
-          <li>
-            <a href="#" class="header__link">Uomo</a>
-          </li>
-          <li>
-            <a href="#" class="header__link">Bambini</a>
+          <li v-for="link in links">
+            <a :href="link.url" class="header__link">{{ link.text }}</a>
           </li>
         </ul>
       </nav>
