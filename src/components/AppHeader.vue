@@ -1,22 +1,7 @@
 <script>
 export default {
-  data() {
-    return {
-      links: [
-        {
-          url: "#",
-          text: "Donna",
-        },
-        {
-          url: "#",
-          text: "Uomo",
-        },
-        {
-          url: "#",
-          text: "Bambini",
-        },
-      ],
-    };
+  props: {
+    links: Array,
   },
 };
 </script>
