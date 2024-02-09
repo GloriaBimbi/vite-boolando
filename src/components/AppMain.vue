@@ -125,6 +125,7 @@ export default {
     margin: 50px 25px;
     width: calc(100% / 3 - 55px);
     min-width: 100px;
+    cursor: pointer;
     position: relative;
 
     &:hover {
