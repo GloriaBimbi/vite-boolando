@@ -5,6 +5,7 @@ export default {
   },
   props: {
     links: Array,
+    socials: Array,
   },
 };
 </script>
@@ -14,17 +15,13 @@ export default {
       <div id="general-info">
         <span class="brand"><strong>Booleando s.r.l.</strong></span>
         <br />
-        <div v-for="link in linksFooter" class="nav">
+        <div v-for="link in links" class="nav">
           <a :href="link.url" class="header__link">{{ link.text }}</a>
         </div>
       </div>
-      <div class="social-media-contacts">
+      <div v-for="social in socials" class="social-media-contacts">
         Trovaci anche su <br />
-        <a href="#"> <i class="fa-brands fa-square-twitter icon"></i> </a>
-        <a href="#"> <i class="fa-brands fa-square-facebook icon"></i> </a>
-        <a href="#"> <i class="fa-brands fa-square-instagram icon"></i> </a>
-        <a href="#"> <i class="fa-brands fa-square-pinterest icon"></i> </a>
-        <a href="#"> <i class="fa-brands fa-square-pinterest icon"></i> </a>
+        <a :href="link.url"> <i :class="link.icon"></i> </a>
       </div>
     </div>
   </footer>

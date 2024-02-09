@@ -108,6 +108,28 @@ export default {
           isInFavorites: true,
         },
       ],
+      socials: [
+        {
+          url: "#",
+          icon: "fa-brands fa-square-twitter icon",
+        },
+        {
+          url: "#",
+          icon: "fa-brands fa-square-facebook icon",
+        },
+        {
+          url: "#",
+          icon: "fa-brands fa-square-instagram icon",
+        },
+        {
+          url: "#",
+          icon: "fa-brands fa-square-pinterest icon",
+        },
+        {
+          url: "#",
+          icon: "fa-brands fa-square-pinterest icon",
+        },
+      ],
     };
   },
   components: { AppHeader, AppMain, AppFooter },
@@ -117,7 +139,7 @@ export default {
 <template>
   <app-header :links="linksHeader"></app-header>
   <app-main :cards="cards"></app-main>
-  <app-footer :links="linksFooter"></app-footer>
+  <app-footer :links="linksFooter" :socials="socials"></app-footer>
 </template>
 
 <style lang="scss">
