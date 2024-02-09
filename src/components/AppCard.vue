@@ -4,7 +4,13 @@ export default {
     buildImagePath(imageName) {
       return new URL("../assets/img/" + imageName, import.meta.url).href;
     },
+    changeStatus(parameter) {
+      console.log(parameter);
+      parameter = !parameter;
+      console.log(parameter);
+    },
   },
+
   props: {
     card: Object,
   },
@@ -33,7 +39,12 @@ export default {
       card.discountPercentage
     }}</span>
     <span v-show="card.sostenibility" class="sostenibility">Sostenibilità</span>
-    <span class="heart">&hearts;</span>
+    <span
+      @click="changeStatus(card.isInFavorites)"
+      :style="card.isInFavorites == true ? 'color:red;' : ''"
+      class="heart"
+      >&hearts;</span
+    >
   </div>
 </template>
 
@@ -93,7 +104,7 @@ export default {
     left: 0;
   }
   .heart {
-    color: black;
+    color: rgba(0, 0, 0, 0.435);
     background-color: white;
     padding: 10px;
     position: relative;

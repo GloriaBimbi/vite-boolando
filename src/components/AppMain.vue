@@ -15,6 +15,7 @@ export default {
           discountStatus: true,
           discountPercentage: "-50%",
           sostenibility: true,
+          isInFavorites: true,
         },
         {
           src: "2.webp",
@@ -26,6 +27,7 @@ export default {
           discountStatus: true,
           discountPercentage: "-30%",
           sostenibility: false,
+          isInFavorites: false,
         },
         {
           src: "3.webp",
@@ -37,6 +39,7 @@ export default {
           discountStatus: true,
           discountPercentage: "-30%",
           sostenibility: false,
+          isInFavorites: false,
         },
         {
           src: "4.webp",
@@ -48,6 +51,7 @@ export default {
           discountStatus: true,
           discountPercentage: "-50%",
           sostenibility: true,
+          isInFavorites: true,
         },
         {
           src: "5.webp",
@@ -59,6 +63,7 @@ export default {
           discountStatus: false,
           discountPercentage: "-30%",
           sostenibility: false,
+          isInFavorites: false,
         },
         {
           src: "6.webp",
@@ -70,6 +75,7 @@ export default {
           discountStatus: false,
           discountPercentage: "",
           sostenibility: true,
+          isInFavorites: true,
         },
       ],
     };

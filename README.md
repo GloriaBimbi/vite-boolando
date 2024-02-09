@@ -17,7 +17,7 @@ Potete testarlo stampando una singola Card con informazioni statiche.
 
 (Se non lo avete già fatto) definite un array di prodotti nel componente AppMain. Potete prendere spunto dall'array allegato o usarlo direttamente così com'è. Iterate sull'array di prodotti e per ognuno di essi create un componente Card, inviando le informazioni necessarie alla visualizzazione.
 
-## Bonus
+## Bonus 1
 
 Facciamo in modo che il cuore nella card del prodotto sia colorato o vuoto a seconda del valore della proprietà "isInFavourites".
 
