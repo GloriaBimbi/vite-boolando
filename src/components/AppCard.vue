@@ -12,9 +12,9 @@ export default {
     buildImagePath(imageName) {
       return new URL("../assets/img/" + imageName, import.meta.url).href;
     },
-    changeStatus() {
-      store.cards[this.index].isInFavourite =
-        !store.cards[this.index].isInFavorites;
+    changeStatus(card) {
+      card.isInFavourite = !card.isInFavorites;
+      console.log(card.isInFavorites, this.index);
     },
   },
 
@@ -53,7 +53,7 @@ export default {
     </div>
 
     <span
-      @click="changeStatus()"
+      @click="changeStatus(card)"
       :style="card.isInFavorites == true ? 'color:red;' : ''"
       class="heart"
       >&hearts;</span

@@ -77,7 +77,7 @@ export default {
 
 <template>
   <app-header :links="linksHeader"></app-header>
-  <app-main :cards="store.cards"></app-main>
+  <app-main></app-main>
   <app-footer :links="linksFooter" :socials="socials"></app-footer>
 </template>
 

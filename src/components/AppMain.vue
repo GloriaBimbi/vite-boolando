@@ -1,12 +1,12 @@
 <script>
 import AppCard from "../components/AppCard.vue";
+import store from "../store/index";
 
 export default {
   data() {
-    return {};
-  },
-  props: {
-    cards: Array,
+    return {
+      store,
+    };
   },
   components: { AppCard },
 };
@@ -16,7 +16,7 @@ export default {
   <main>
     <div id="product" class="container">
       <app-card
-        v-for="(card, index) in cards"
+        v-for="(card, index) in store.cards"
         :card="card"
         :index="index"
       ></app-card>
