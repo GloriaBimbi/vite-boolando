@@ -59,18 +59,17 @@ export default {
         },
       ],
       store,
-      cards: [],
     };
-  },
-  created() {
-    this.fetchCards();
   },
   methods: {
     fetchCards() {
       axios.get(this.store.apiUrl).then((res) => {
-        this.cards = res.data;
+        store.cards = res.data;
       });
     },
+  },
+  created() {
+    this.fetchCards();
   },
   components: { AppHeader, AppMain, AppFooter },
 };
@@ -78,7 +77,7 @@ export default {
 
 <template>
   <app-header :links="linksHeader"></app-header>
-  <app-main :cards="cards"></app-main>
+  <app-main :cards="store.cards"></app-main>
   <app-footer :links="linksFooter" :socials="socials"></app-footer>
 </template>
 

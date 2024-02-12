@@ -15,7 +15,11 @@ export default {
 <template>
   <main>
     <div id="product" class="container">
-      <app-card v-for="card in cards" :card="card"></app-card>
+      <app-card
+        v-for="(card, index) in cards"
+        :card="card"
+        :index="index"
+      ></app-card>
     </div>
   </main>
 </template>

@@ -12,15 +12,15 @@ export default {
     buildImagePath(imageName) {
       return new URL("../assets/img/" + imageName, import.meta.url).href;
     },
-    changeStatus(parameter) {
-      console.log(store.parameter);
-      store.parameter = !store.parameter;
-      console.log(store.parameter);
+    changeStatus() {
+      store.cards[this.index].isInFavourite =
+        !store.cards[this.index].isInFavorites;
     },
   },
 
   props: {
     card: Object,
+    index: Number,
   },
 };
 </script>
@@ -53,7 +53,7 @@ export default {
     </div>
 
     <span
-      @click="changeStatus(card.isInFavorites)"
+      @click="changeStatus()"
       :style="card.isInFavorites == true ? 'color:red;' : ''"
       class="heart"
       >&hearts;</span
