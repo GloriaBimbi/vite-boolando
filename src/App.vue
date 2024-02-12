@@ -69,7 +69,6 @@ export default {
     fetchCards() {
       axios.get(this.store.apiUrl).then((res) => {
         this.cards = res.data;
-        console.log(res.data);
       });
     },
   },

@@ -13,9 +13,9 @@ export default {
       return new URL("../assets/img/" + imageName, import.meta.url).href;
     },
     changeStatus(parameter) {
-      console.log(parameter, this.store.parameter);
-      store.parameter = !parameter;
-      console.log(parameter);
+      console.log(store.parameter);
+      store.parameter = !store.parameter;
+      console.log(store.parameter);
     },
   },
 
