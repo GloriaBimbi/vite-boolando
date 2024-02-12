@@ -12,9 +12,10 @@ export default {
     buildImagePath(imageName) {
       return new URL("../assets/img/" + imageName, import.meta.url).href;
     },
-    changeStatus(card) {
-      card.isInFavourite = !card.isInFavorites;
-      console.log(card.isInFavorites, this.index);
+    changeStatus() {
+      store.cards[this.index].isInFavorites =
+        !store.cards[this.index].isInFavorites;
+      console.log(store.cards[this.index].isInFavorites, this.index);
     },
   },
 
@@ -53,7 +54,7 @@ export default {
     </div>
 
     <span
-      @click="changeStatus(card)"
+      @click="changeStatus()"
       :style="card.isInFavorites == true ? 'color:red;' : ''"
       class="heart"
       >&hearts;</span
@@ -116,10 +117,6 @@ export default {
     position: absolute;
     left: 249px;
     bottom: 415px;
-
-    &:hover {
-      color: red;
-    }
   }
   .overlay {
     position: absolute;
