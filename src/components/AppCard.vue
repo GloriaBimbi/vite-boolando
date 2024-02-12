@@ -1,12 +1,20 @@
 <script>
+import store from "../store/index";
+
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
+
   methods: {
     buildImagePath(imageName) {
       return new URL("../assets/img/" + imageName, import.meta.url).href;
     },
     changeStatus(parameter) {
-      console.log(parameter);
-      parameter = !parameter;
+      console.log(parameter, this.store.parameter);
+      store.parameter = !parameter;
       console.log(parameter);
     },
   },
