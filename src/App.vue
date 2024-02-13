@@ -4,6 +4,7 @@ import AppMain from "./components/AppMain.vue";
 import AppFooter from "./components/AppFooter.vue";
 import axios from "axios";
 import store from "./store/index";
+import AppModal from "./components/AppModals.vue";
 
 export default {
   data() {
@@ -71,13 +72,14 @@ export default {
   created() {
     this.fetchCards();
   },
-  components: { AppHeader, AppMain, AppFooter },
+  components: { AppHeader, AppMain, AppFooter, AppModal },
 };
 </script>
 
 <template>
   <app-header :links="linksHeader"></app-header>
   <app-main></app-main>
+  <app-modal v-if="store.modal.show"></app-modal>
   <app-footer :links="linksFooter" :socials="socials"></app-footer>
 </template>
 

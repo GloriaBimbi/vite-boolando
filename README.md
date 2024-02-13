@@ -27,7 +27,7 @@ Spostate i menu dinamici dai componenti AppHeader e AppFooter al componente App.
 
 ### CONSEGNA:
 
-## MOCKING API
+## Mocking api
 
 - Installate la libreria json-server
 - Mettete in un file .json la struttura dati dei prodotti (vedi allegato - se non ne avete una ad hoc potete usarlo direttamente)
@@ -39,11 +39,20 @@ di seguito i link per l'installazione dei pacchetti necessari
 https://www.npmjs.com/package/json-server
 https://www.npmjs.com/package/axios
 
-## GLOBAL STATE
+## global state
 
 Realizzare un file "store" come visto in classe / come descritto dalla DOC di Vue
 Usarlo per conservare ed utilizzare l'endpoint base (localhost:3000)
 
-## BONUS
+## bonus
 
 Aggiungere al global state (store) anche la lista di prodotti recuperata dal JSON Server ed utilizzarla durante la stampa (modificato)
+
+## Descrizione
+
+Facciamo in modo che al click sul nome del prodotto nella card venga emesso un evento "show-product" verso il componente App.
+In App, quando riceviamo l'evento, apriamo una modale che mostra tutte le informazioni testuali del prodotto. Nella modale è presente una X (o un pulsante) per chiuderla.
+
+## Bonus
+
+Proviamo a creare una modale più completa: mostriamo le immagini del prodotto sulla sinistra e le informazioni di testo sulla destra.
