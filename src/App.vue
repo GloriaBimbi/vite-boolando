@@ -4,7 +4,7 @@ import AppMain from "./components/AppMain.vue";
 import AppFooter from "./components/AppFooter.vue";
 import axios from "axios";
 import store from "./store/index";
-import AppModal from "./components/AppModals.vue";
+import AppModal from "./components/AppModal.vue";
 
 export default {
   data() {
@@ -69,9 +69,11 @@ export default {
       });
     },
   },
+
   created() {
     this.fetchCards();
   },
+
   components: { AppHeader, AppMain, AppFooter, AppModal },
 };
 </script>

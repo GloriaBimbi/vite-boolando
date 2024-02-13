@@ -8,6 +8,13 @@ export default {
       store,
     };
   },
+
+  methods: {
+    handleModelOpening() {
+      store.modal.show = true;
+    },
+  },
+
   components: { AppCard },
 };
 </script>
@@ -19,6 +26,7 @@ export default {
         v-for="(card, index) in store.cards"
         :card="card"
         :index="index"
+        @open-model="handleModelOpening"
       ></app-card>
     </div>
   </main>

@@ -23,11 +23,13 @@ export default {
     card: Object,
     index: Number,
   },
+
+  emits: ["open-model"],
 };
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="$emit('open-model')">
     <img :src="buildImagePath(card.src)" alt="" class="product-picture" />
     <div class="overlay">
       <img

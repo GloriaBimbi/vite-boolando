@@ -1,7 +1,18 @@
 <script>
+import store from "../store/index";
 export default {
   data() {
-    return {};
+    return {
+      store,
+    };
+  },
+  methods: {
+    addToCart() {
+      alert("Hai aggiunto questo prodotto al carrello");
+    },
+    closeModal() {
+      store.modal.show = false;
+    },
   },
 };
 </script>
@@ -19,8 +30,8 @@ export default {
           alt="immagine del prodotto selezionato"
         />
         <div class="tags">
-          <span class="discount-percentage"></span>
-          <span class="sostenibility"></span>
+          <span class="discount-percentage">-50%</span>
+          <span class="sostenibility">Sostenibilità</span>
         </div>
       </div>
       <div class="info-container">
@@ -30,6 +41,13 @@ export default {
         <h4>Prima a: <span class="originalPrize">29,99€</span></h4>
         <h4>Ora a: <span class="discountPrize">14,99€</span></h4>
         <h5 class="discountPercentage">-50%</h5>
+      </div>
+      <div class="active-icons">
+        <i
+          class="fa-solid fa-cart-shopping add-to-cart"
+          @click="addToCart()"
+        ></i>
+        <i class="fa-solid fa-x close-modal" @click="closeModal()"></i>
       </div>
     </div>
   </div>
@@ -55,23 +73,45 @@ export default {
     background-color: white;
     padding: 1rem;
     border-radius: 1rem;
-    padding: 30px;
+    position: relative;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 50px;
 
+    .close-modal {
+      color: rgb(62, 62, 62);
+      border: 1px solid rgb(62, 62, 62);
+      padding: 10px 12px;
+      top: -30px;
+      right: -10px;
+    }
+
+    .add-to-cart {
+      color: rgb(39, 152, 244);
+      background-color: rgba(110, 179, 235, 0.412);
+      border: 1px solid rgb(39, 152, 244);
+      padding: 10px;
+
+      top: 8px;
+      right: 200px;
+    }
+
+    .close-modal,
+    .add-to-cart {
+      border-radius: 0.2rem;
+      position: relative;
+    }
     .img-container {
       img {
         max-width: 50%;
-        max-height: 300px;
-        position: relative;
+        max-height: 550px;
       }
       .tags {
         position: absolute;
-        bottom: 160px;
-        left: 800px;
+        bottom: 30px;
+        right: 30px;
 
         .discount-percentage {
           background-color: red;
@@ -88,6 +128,7 @@ export default {
       }
     }
     .info-container {
+      padding-top: 50px;
       .productDescription {
         font-size: 20px;
       }
@@ -112,7 +153,7 @@ export default {
         border-radius: 50%;
         background-color: yellow;
         max-width: 50px;
-        margin-top: 40px;
+        margin-top: 20px;
       }
     }
   }
