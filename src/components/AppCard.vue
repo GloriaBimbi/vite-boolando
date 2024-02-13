@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-  <div class="card" @click="$emit('open-model')">
+  <div class="card" @click="$emit('open-model', this.index)">
     <img :src="buildImagePath(card.src)" alt="" class="product-picture" />
     <div class="overlay">
       <img

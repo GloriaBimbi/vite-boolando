@@ -13,6 +13,9 @@ export default {
     closeModal() {
       store.modal.show = false;
     },
+    buildImagePath(imageName) {
+      return new URL("../assets/img/" + imageName, import.meta.url).href;
+    },
   },
 };
 </script>
@@ -22,25 +25,39 @@ export default {
     <div class="modal">
       <div class="img-container">
         <img
-          src="../assets/img/1.webp"
+          :src="buildImagePath(store.modal.src)"
           alt="immagine del prodotto selezionato"
         />
         <img
-          src="../assets/img/1b.webp"
+          :src="buildImagePath(store.modal.srcHover)"
           alt="immagine del prodotto selezionato"
         />
         <div class="tags">
-          <span class="discount-percentage">-50%</span>
-          <span class="sostenibility">Sostenibilità</span>
+          <span
+            v-if="store.modal.discountPercentage"
+            class="discount-percentage"
+            >{{ store.modal.discountPercentage }}</span
+          >
+          <span v-if="store.modal.sostenibility" class="sostenibility"
+            >Sostenibilità</span
+          >
         </div>
       </div>
       <div class="info-container">
-        <h2 class="productDescription">RELAXED FIT TEE UNISEX</h2>
+        <h2 class="productDescription">{{ store.modal.productDescription }}</h2>
         <hr />
-        <h3 class="brand">Levi's</h3>
-        <h4>Prima a: <span class="originalPrize">29,99€</span></h4>
-        <h4>Ora a: <span class="discountPrize">14,99€</span></h4>
-        <h5 class="discountPercentage">-50%</h5>
+        <h3 class="brand">{{ store.modal.brand }}</h3>
+        <h4>
+          Prima a:
+          <span class="originalPrize">{{ store.modal.originalPrize }}</span>
+        </h4>
+        <h4>
+          Ora a:
+          <span class="discountPrize">{{ store.modal.discountPrize }}</span>
+        </h4>
+        <h5 v-if="store.modal.discountPercentage" class="discountPercentage">
+          {{ store.modal.discountPercentage }}
+        </h5>
       </div>
       <div class="active-icons">
         <i
@@ -95,7 +112,7 @@ export default {
       padding: 10px;
 
       top: 8px;
-      right: 200px;
+      right: 50px;
     }
 
     .close-modal,
@@ -105,8 +122,9 @@ export default {
     }
     .img-container {
       img {
-        max-width: 50%;
-        max-height: 550px;
+        width: 50%;
+        height: 350px;
+        object-fit: cover;
       }
       .tags {
         position: absolute;
