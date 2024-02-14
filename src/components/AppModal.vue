@@ -3,12 +3,14 @@ import store from "../store/index";
 export default {
   data() {
     return {
+      counter: 0,
       store,
     };
   },
   methods: {
     addToCart() {
       alert("Hai aggiunto questo prodotto al carrello");
+      store.counter++;
     },
     closeModal() {
       store.modal.show = false;
@@ -47,7 +49,7 @@ export default {
         <h2 class="productDescription">{{ store.modal.productDescription }}</h2>
         <hr />
         <h3 class="brand">{{ store.modal.brand }}</h3>
-        <h4>
+        <h4 v-if="store.modal.originalPrize">
           Prima a:
           <span class="originalPrize">{{ store.modal.originalPrize }}</span>
         </h4>
@@ -55,15 +57,11 @@ export default {
           Ora a:
           <span class="discountPrize">{{ store.modal.discountPrize }}</span>
         </h4>
-        <h5 v-if="store.modal.discountPercentage" class="discountPercentage">
-          {{ store.modal.discountPercentage }}
-        </h5>
       </div>
       <div class="active-icons">
-        <i
-          class="fa-solid fa-cart-shopping add-to-cart"
-          @click="addToCart()"
-        ></i>
+        <i class="fa-solid fa-cart-shopping add-to-cart" @click="addToCart()">
+          <span class="cart-counter">{{ store.counter }}</span></i
+        >
         <i class="fa-solid fa-x close-modal" @click="closeModal()"></i>
       </div>
     </div>
@@ -110,9 +108,17 @@ export default {
       background-color: rgba(110, 179, 235, 0.412);
       border: 1px solid rgb(39, 152, 244);
       padding: 10px;
+      position: relative;
 
       top: 8px;
       right: 50px;
+
+      .cart-counter {
+        color: rgb(76, 205, 72);
+        position: relative;
+        top: 5px;
+        left: 5px;
+      }
     }
 
     .close-modal,
@@ -122,7 +128,7 @@ export default {
     }
     .img-container {
       img {
-        width: 50%;
+        max-width: 50%;
         height: 350px;
         object-fit: cover;
       }
@@ -147,6 +153,9 @@ export default {
     }
     .info-container {
       padding-top: 50px;
+      width: 500px;
+      height: 350px;
+
       .productDescription {
         font-size: 20px;
       }
@@ -165,13 +174,6 @@ export default {
       }
       h4 {
         padding: 5px 0;
-      }
-      .discountPercentage {
-        padding: 15px 10px;
-        border-radius: 50%;
-        background-color: yellow;
-        max-width: 50px;
-        margin-top: 20px;
       }
     }
   }

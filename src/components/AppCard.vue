@@ -87,6 +87,7 @@ export default {
 
   .discount-prize {
     color: red;
+    margin-right: 10px;
   }
 
   .original-prize {

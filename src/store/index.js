@@ -3,6 +3,7 @@ import { reactive } from "vue";
 const store = reactive({
   apiUrl: "http://localhost:3000/cards",
   cards: [],
+  counter: 0,
   modal: {
     show: false,
     id: null,
